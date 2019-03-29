@@ -12,7 +12,9 @@ Built with docker 18.09 on Mac High Sierra.
 
 ## Running
 1.) download this repo and navigate to that location in a terminal.
+
 2.) Then run `docker-compose up --build`
+
 3.) Open a web browser and navigate to localhost:53080
 
 
