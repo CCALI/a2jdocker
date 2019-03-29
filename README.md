@@ -15,8 +15,17 @@ Built with docker 18.09 on Mac High Sierra.
 
 2.) Then run `docker-compose up --build`
 
-3.) Open a web browser and navigate to localhost:53080
+3.) Open a web browser and navigate to `localhost:53080/a2j-viewer/viewer`
 
+4.) select the `default` A2J Guided Interview (R)
+
+## Configuration
+
+### Guides
+You can use the uploader demo tool at `/a2j-viewer/viewer/` to upload guides published from author or simply unzip the guide to `public_html/a2j-viewer/guides`
+
+### Code
+The if run with the link generated with the upload tool the `default` interview will use `public_html/a2j-viewer/viewer/answers.php` to process posted answers. Feel free to edit or change this code as you wish.
 
 ## More info
 
