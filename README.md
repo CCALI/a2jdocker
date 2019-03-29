@@ -4,7 +4,6 @@ https://github.com/CCALI/A2JDAT/ + php 7.2. This project dockerizes version 2.0.
 
 NOTE: By downloading this application, you are agreeing to the terms included in the user license [LICENSE.md](https://github.com/CCALI/A2JDAT/blob/master/LICENSE.md).
 
-
 ## Requirements
 Docker 18
 
