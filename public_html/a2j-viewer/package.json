@@ -1,0 +1,232 @@
+{
+  "name": "caja",
+  "version": "0.0.1",
+  "description": "Authoring and viewer App GUI.",
+  "main": "caja/author/app",
+  "scripts": {
+    "lint:author": "standard author/*.js author/**/*.js --fix --env mocha",
+    "lint:viewer": "standard viewer/*.js viewer/**/*.js --fix --env mocha",
+    "test": "npm run lint:author && npm run lint:viewer && testee --reporter Spec --browsers firefox viewer/test/index.html author/test/index.html",
+    "build-docs": "grunt documentjs",
+    "serve-docs": "grunt documentjs-lite && http-server docs",
+    "postinstall": "steal-tools bundle --deps --no-minify"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CCALI/CAJA"
+  },
+  "devDependencies": {
+    "bit-tabs": "0.2.0",
+    "blueimp-file-upload": "^9.22.0",
+    "bootstrap": "3.3.5",
+    "bootstrap-tokenfield": "^0.12.0",
+    "can": "^2.3.33",
+    "chai": "^3.0.0",
+    "connect": "3.2.0",
+    "cuid": "^1.3.8",
+    "documentjs": "~0.4.1",
+    "express": "^4.13.0",
+    "funcunit": "^3.0.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-run": "^0.8.0",
+    "grunt-steal": "^1.0.0",
+    "http-server": "^0.10.0",
+    "jquery": "~2.1.4",
+    "jquery-ui": "git://github.com/jquery/jquery-ui.git#1.11.4",
+    "jquerypp": "^2.0.2",
+    "lightbox2": "^2.10.0",
+    "localforage": "^1.3.0",
+    "lodash": "^4.0.0",
+    "moment": "^2.10.3",
+    "numbro": "^2.1.0",
+    "numeral": "^1.5.6",
+    "path-browserify": "0.0.0",
+    "pdfjs-dist": "^2.0.466",
+    "serve-index": "1.4.0",
+    "serve-static": "1.6.4",
+    "sinon": "^1.17.2",
+    "standard": "^11.0.1",
+    "steal": "^1.6.2",
+    "steal-css": "^1.3.1",
+    "steal-less": "^1.2.2",
+    "steal-mocha": "^1.0.0",
+    "steal-tools": "^1.10.0",
+    "string-natural-compare": "^2.0.2",
+    "testee": "^0.2.0",
+    "text-statistics": "^0.1.1",
+    "typeahead.js": "git://github.com/twitter/typeahead.js.git#v0.11.1"
+  },
+  "standard": {
+    "globals": [
+      "$",
+      "jQuery",
+      "can"
+    ],
+    "ignore": [
+      "author/src/**",
+      "author/build.production.html.js",
+      "viewer/build.production.html.js"
+    ]
+  },
+  "system": {
+    "transpiler": "babel",
+    "ext": {
+      "text": "text"
+    },
+    "plugins": [
+      "done-css",
+      "steal-less",
+      "jquery",
+      "can"
+    ],
+    "npmIgnore": [
+      "testee",
+      "documentjs",
+      "grunt-contrib-less"
+    ],
+    "configDependencies": [
+      "author/utils/load-fixtures",
+      "author/utils/set-global-for-lodash"
+    ],
+    "map": {
+      "chai": "chai/chai",
+      "assert": "tests/assert",
+      "cuid": "cuid/dist/browser-cuid",
+      "jquery-ui/widget": "jquery-ui/ui/widget",
+      "localforage": "localforage/dist/localforage.nopromises"
+    },
+    "meta": {
+      "caja/author/src/A2J_Tabs": {
+        "format": "global",
+        "eval": "script",
+        "deps": [
+          "jquery-ui/ui/sortable"
+        ]
+      },
+      "caja/author/src/A2J_AuthorApp": {
+        "format": "global",
+        "eval": "script",
+        "deps": [
+          "jquery-ui/ui/button",
+          "jquery-ui/ui/autocomplete",
+          "jquery-ui/ui/draggable",
+          "jquery-ui/ui/resizable",
+          "jquery-ui/ui/dialog",
+          "jquery-ui/ui/tooltip"
+        ]
+      },
+      "caja/author/src/A2J_Clauses": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/A2J_Reports": {
+        "format": "global",
+        "eval": "script",
+        "deps": [
+          "caja/author/src/viewer/A2J_Logic"
+        ]
+      },
+      "caja/author/src/A2J_Mapper": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/A2J_Pages": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/A2J_Guides": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/A2J_Debug": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/viewer/A2J_Types": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/viewer/A2J_Logic": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/viewer/A2J_ParserConvert": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/viewer/A2J_Parser": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/viewer/A2J_Viewer": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/viewer/A2J_Prefs": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/viewer/A2J_Languages": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/viewer/A2J_MobileFile": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/viewer/A2J_Shared": {
+        "format": "global",
+        "eval": "script",
+        "deps": [
+          "jquery-ui/ui/dialog"
+        ]
+      },
+      "caja/author/src/viewer/A2J_SharedSus": {
+        "format": "global",
+        "eval": "script"
+      },
+      "caja/author/src/viewer/A2J_AnswerFile": {
+        "format": "global",
+        "eval": "script",
+        "deps": [
+          "caja/author/src/viewer/A2J_Types"
+        ]
+      },
+      "caja/author/src/viewer/jquery.ui.combobox": {
+        "deps": [
+          "jquery-ui/ui/widget"
+        ]
+      },
+      "caja/author/src/viewer/jquery.ui.traggable": {
+        "deps": [
+          "jquery-ui/ui/mouse",
+          "jquery-ui/ui/widget"
+        ]
+      },
+      "blueimp-file-upload/js/jquery.fileupload": {
+        "deps": [
+          "jquery"
+        ]
+      },
+      "typeahead.js/dist/typeahead.jquery": {
+        "format": "global"
+      },
+      "typeahead.js/dist/bloodhound": {
+        "format": "cjs"
+      },
+      "bootstrap/js/modal": {
+        "format": "global",
+        "deps": [
+          "jquery@2.1.4#dist/jquery"
+        ]
+      }
+    }
+  },
+  "dependencies": {}
+}

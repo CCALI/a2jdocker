@@ -1,0 +1,36 @@
+version: "3.2"
+services:
+  php:
+    build: './php/'
+    networks:
+      - backend
+    volumes:
+      - ./public_html/:/var/www/html/
+  apache:
+    build: './apache/'
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - frontend
+      - backend
+    ports:
+      - "53080:80"
+    volumes:
+      - ./public_html/:/var/www/html/
+  mysql:
+    image: mysql:5.6.40
+    networks:
+      - backend
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+  dat:
+    #image: caliorg/a2jdat
+    build: './CALI-A2JDAT/'
+    volumes:
+      - ./public_html/:/var/www/html/
+    networks:
+      - backend
+networks:
+  frontend:
+  backend:
