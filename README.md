@@ -1,4 +1,4 @@
-# CALI A2JDAT Docker project
+# CALI A2JViewer + DAT + PHP Docker Development Environment project
 This is an *experimental* demo of a guided interview that producest documents and does post processing using a Dockerized version of the A2J Viewer https://github.com/CCALI/a2jviewer/ + A2JDAT
 https://github.com/CCALI/A2JDAT/ + php 7.2. This project dockerizes version 2.0.0 of the DAT.  It includes wkhtmltopdf, node 8.9.4, and the CALI DAT source.
 
