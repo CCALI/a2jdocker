@@ -25,7 +25,9 @@ Built with docker 18.09 on Mac High Sierra.
 You can use the uploader demo tool at `/a2j-viewer/viewer/` to upload guides published from author or simply unzip the guide to `public_html/a2j-viewer/guides`
 
 ### Code
-The if run with the link generated with the upload tool the `default` interview will use `public_html/a2j-viewer/viewer/answers.php` to process posted answers. Feel free to edit or change this code as you wish. Any php code in `public_html` and subdirectories is runnable.
+If run with the link generated with the upload tool the `default` interview will use `public_html/a2j-viewer/viewer/answers.php` to process posted answers. Feel free to edit or change this code as you wish. Any php code in `public_html` and subdirectories is runnable.
+
+To use different processing code, you can either change the setDataURL in viewer.html or launch with the setDataURL query parameter set to point to your code
 
 ## More info
 
