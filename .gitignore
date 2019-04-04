@@ -2,3 +2,8 @@
 .key
 .pem
 private_web/*
+.env
+.dump
+identity
+id_rsa
+.rsa
