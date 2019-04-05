@@ -19,6 +19,11 @@
 </HEAD>
 <BODY>
 <?php
+/***
+	* Set data example for storing viewer answers
+	* Ideally this would include some access control code
+	* and would encrypt answers
+***/
 
 // Setup variables
 $curdate = getdate();
