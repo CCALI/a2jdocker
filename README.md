@@ -27,7 +27,13 @@ You can use the uploader demo tool at `/a2j-viewer/viewer/` to upload guides pub
 ### Code
 If run with the link generated with the upload tool the `demo-a2j-guided-interview` interview will use `public_html/a2j-viewer/viewer/answers.php` to process posted answers. Feel free to edit or change this code as you wish. Any php code in `public_html` and subdirectories is runnable.
 
-To use different processing code, you can either change the setDataURL in viewer.html or launch with the setDataURL query parameter set to point to your code. An example of this looks like: `www.example.org/a2j-viewer/viewer/viewer.html?templateURL=../Guides/someguide&setDataURL=mysaveanswers.php`
+To use different processing code, you can either change the setDataURL in viewer.html or launch with the `setDataURL` query parameter set to point to your code. An example of this looks like: `www.example.org/a2j-viewer/viewer/viewer.html?templateURL=../Guides/someguide&setDataURL=mysaveanswers.php`
+
+A basic example for saving data is provided in `/a2j-viewer/viewer/SetData.php` and can be run by opening a browser going to `localhost:53080/a2j-viewer/viewer/viewer.html?templateURL=../guides/demo-a2j-guided-interview/Guide.xml&fileDataURL=../guides/demo-a2j-guided-interview/&setDataURL=./SetData.php`. Data will be stored in private_web as `data.xml`.
+
+after running the above, can be loaded with the `getDataURL` query parameter:
+
+`localhost:53080/a2j-viewer/viewer/viewer.html?templateURL=../guides/demo-a2j-guided-interview/Guide.xml&fileDataURL=../guides/demo-a2j-guided-interview/&setDataURL=./SetData.php&getDataURL=./GetData.php`
 
 ## More info
 

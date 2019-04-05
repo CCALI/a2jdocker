@@ -23,7 +23,7 @@
 // Setup variables
 $curdate = getdate();
 $curdate = date('Y-m-d-H.i.s');
-$filename = "data.xml"
+$filename = "data.xml";
 
 // Setup save directory
 // !!!!!!! THIS SHOULD NOT BE WEB ACCESSIBLE !!!!!!!!
