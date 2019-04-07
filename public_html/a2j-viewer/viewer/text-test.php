@@ -11,9 +11,11 @@ use Twilio\Rest\Client;
 
 $config = parse_ini_file('/var/www/private/config.ini');
 
-$sid    = $config['sid']; //"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-$token  = $config['token']; //"your_auth_token";
+$sid    = $config['twilio_sid']; //"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+$token  = $config['twilio_token']; //"your_auth_token";
+$twilio_from  = $config['twilio_from']; //"your_auth_token";
 $twilio = new Client($sid, $token);
+$client_phone = '5551234567';
 
 /*
 //Load data from answerset
@@ -34,10 +36,10 @@ $phone = $xpath->query("//Answer[@name='Client last name TE']/TextValue")->item(
 */
 //Send Message
 $message = $twilio->messages
-                  ->create("+17086550418",//"+17036263287", // to
+                  ->create("+1" . $client_phone,//"+17036263287", // to
                            array(
                                "body" => "Tobias testing twilio by spamming Jess's phone",
-                               "from" => "+13605294396"
+                               "from" => $twilio_from
                            )
                   );
 
