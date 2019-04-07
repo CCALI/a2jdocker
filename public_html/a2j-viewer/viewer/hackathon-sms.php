@@ -129,9 +129,9 @@ if (strlen($client_email)){
       //$mail->send();
       echo 'Message has been sent';
   } catch (Exception $e) {
-      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+      //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
   }
 }
 
-
+echo "Thank you for using Re-entry Navigator!"
 //print($message->sid);
