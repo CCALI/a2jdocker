@@ -2,6 +2,7 @@
 /***
 Messaging integration
 Tobias Nteireho
+The Center for Computer Assisted Legal Instruction
 ***/
 
 $config = parse_ini_file('/var/www/private/config.ini');
