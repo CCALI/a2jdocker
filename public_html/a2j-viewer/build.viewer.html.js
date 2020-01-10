@@ -1,4 +1,12 @@
-<!--
+
+const fs = require('fs');
+
+const buildViewerHtml = function () {
+  const version = Date.now();
+  const html = template(version);
+
+  function template (version) {
+    return `<!--
     A2J Author 6 * Justice * justicia * 正义 * công lý * 사법 * правосудие
     All Contents Copyright The Center for Computer-Assisted Legal Instruction
     2012-2015
@@ -53,10 +61,18 @@
       <script main="@empty"
               env="production"
               config="../package.json!npm"
-              src="../dist/bundles/caja/viewer/app.js?v=1576512922819"
+              src="../dist/bundles/caja/viewer/app.js?v=${version}"
               cache-key="v"
-              cache-version="1576512922819"
+              cache-version="${version}"
               base-url="../">
       </script>
     </body>
-  </html>
+  </html>`;
+  }
+
+  fs.writeFileSync(__dirname + '/viewer/viewer.html', html, 'utf-8');
+}
+
+module.exports =  {
+  buildViewerHtml
+}
