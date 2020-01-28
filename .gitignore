@@ -2,6 +2,7 @@
 .key
 .pem
 private_web/*
+!private_web/README
 .env
 .dump
 identity
